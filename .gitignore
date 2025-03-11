@@ -1,0 +1,33 @@
+# Unity-generated files
+Library/
+Temp/
+Obj/
+Logs/
+UserSettings/
+
+# Builds
+Build/
+Builds/
+[Bb]uild/
+
+# Unity metadata
+*.unityproj
+*.asset
+*.pidb
+*.suo
+*.user
+*.userprefs
+*.csproj
+*.sln
+*.tmp
+*.svd
+*.pdb
+
+# Ignore crash reports
+Crashes/
+
+# Ignore other system files
+.DS_Store
+Thumbs.db
+
+
