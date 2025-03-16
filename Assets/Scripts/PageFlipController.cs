@@ -6,6 +6,8 @@ public class PageFlipController : MonoBehaviour
 {
     public InputActionReference flipPageAction; // Assign Flip Page action in Inspector
     public Transform[] pagePivots; // Array to hold multiple pages
+    public AudioSource pageFlipAudio; //Assign AudioSource in Inspector
+
 
     private int currentPage = 0; // Track current page index
     private bool isFlipping = false;
@@ -23,6 +25,10 @@ public class PageFlipController : MonoBehaviour
             if (currentPage < pagePivots.Length) // Flip only if there are pages left
             {
                 isFlipping = true;
+                if (pageFlipAudio != null) // Play sound when flipping
+                {
+                    pageFlipAudio.Play(); // Plays the assigned flip sound
+                }
                 targetRotations[currentPage] = (targetRotations[currentPage] + 180f) % 360f;
                 StartCoroutine(FlipPageAnimation(pagePivots[currentPage], targetRotations[currentPage]));
                 currentPage++; // Move to the next page
